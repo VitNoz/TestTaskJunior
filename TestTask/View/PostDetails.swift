@@ -25,7 +25,6 @@ class PostDetailsViewController: UIViewController {
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateStyle = DateFormatter.Style.long
                 dateFormatter.locale = Locale(identifier: "en_US")
-                
                 let dateText = dateFormatter.string(from: date)
                 return dateText
             }()
