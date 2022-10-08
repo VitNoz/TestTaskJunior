@@ -12,8 +12,7 @@ class PostController: UITableViewController {
     static let shared = PostController()
     
     var posts = [Post]()
-    //var detailedPosts = [PostDetails]()
-    let cellId = "\(String(describing: CustomPostCell.self))"//XIB
+    let cellId = "\(String(describing: CustomPostCell.self))"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +24,6 @@ class PostController: UITableViewController {
     }
     
     fileprivate func fetchData() {
-        //Parser.shared.getPosts { (posts, postsDetails, err) in
             Parser.shared.getPosts { (posts, err) in
             if let err = err {
                 print("Failed to fetch posts:", err)
@@ -33,17 +31,6 @@ class PostController: UITableViewController {
             }
             
             self.posts = posts?.posts ?? []
-                //print(self.posts[0])
-                //print(self.posts)
-            //self.detailedPosts = postsDetails ?? []
-            //self.posts = self.posts.sorted(by: {$0.postId < $1.postId})
-            //self.detailedPosts = self.detailedPosts.sorted(by: {$0.postId < $1.postId})
-            //print(self.detailedPosts.count)
-            //print(self.detailedPosts[1])
-//            for index in 0..<self.posts.count {
-//                self.posts[index].text = self.detailedPosts[index].text
-//                self.posts[index].postImage = self.detailedPosts[index].postImage
-//            }
             self.tableView.reloadData()
         }
     }
@@ -65,7 +52,6 @@ class PostController: UITableViewController {
     }
     
     fileprivate func setupTableView() {
-        //tableView.register(PostCell.self, forCellReuseIdentifier: cellId)
         tableView.register(UINib(nibName: cellId, bundle: nil), forCellReuseIdentifier: cellId)
     }
     

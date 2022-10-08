@@ -16,9 +16,7 @@
 		66C349D428E330250009E0D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66C349D228E330250009E0D3 /* LaunchScreen.storyboard */; };
 		66C349DC28EAC44D0009E0D3 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C349DB28EAC44D0009E0D3 /* Post.swift */; };
 		66C349DF28EAC68C0009E0D3 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C349DE28EAC68C0009E0D3 /* Parser.swift */; };
-		66C349EB28EAE3500009E0D3 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C349EA28EAE3500009E0D3 /* PostCell.swift */; };
 		66C349ED28EAE35E0009E0D3 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C349EC28EAE35E0009E0D3 /* PostController.swift */; };
-		66C349EF28EAE3920009E0D3 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C349EE28EAE3920009E0D3 /* PostViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,9 +31,7 @@
 		66C349D528E330250009E0D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66C349DB28EAC44D0009E0D3 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		66C349DE28EAC68C0009E0D3 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
-		66C349EA28EAE3500009E0D3 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		66C349EC28EAE35E0009E0D3 /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
-		66C349EE28EAE3920009E0D3 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +66,7 @@
 			children = (
 				66C349DD28EAC4580009E0D3 /* Model */,
 				66C349E728EAE2A30009E0D3 /* View */,
-				66C349F028EAE39D0009E0D3 /* ViewModel */,
+				66C349E628EAE28C0009E0D3 /* Controller */,
 				66C349E028EAC6950009E0D3 /* Service */,
 				66C349C728E330200009E0D3 /* AppDelegate.swift */,
 				66C349C928E330200009E0D3 /* SceneDelegate.swift */,
@@ -97,17 +93,6 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		66C349E528EAE2820009E0D3 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				66C349EA28EAE3500009E0D3 /* PostCell.swift */,
-				66620FA028EF5AC70067EFF8 /* PostDetails.swift */,
-				66620F9828EB2C530067EFF8 /* CustomPostCell.swift */,
-				66620F9928EB2C530067EFF8 /* CustomPostCell.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		66C349E628EAE28C0009E0D3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,18 +104,11 @@
 		66C349E728EAE2A30009E0D3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				66C349E528EAE2820009E0D3 /* View */,
-				66C349E628EAE28C0009E0D3 /* Controller */,
+				66620FA028EF5AC70067EFF8 /* PostDetails.swift */,
+				66620F9828EB2C530067EFF8 /* CustomPostCell.swift */,
+				66620F9928EB2C530067EFF8 /* CustomPostCell.xib */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		66C349F028EAE39D0009E0D3 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				66C349EE28EAE3920009E0D3 /* PostViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,8 +187,6 @@
 				66C349DF28EAC68C0009E0D3 /* Parser.swift in Sources */,
 				66620FA128EF5AC70067EFF8 /* PostDetails.swift in Sources */,
 				66C349ED28EAE35E0009E0D3 /* PostController.swift in Sources */,
-				66C349EB28EAE3500009E0D3 /* PostCell.swift in Sources */,
-				66C349EF28EAE3920009E0D3 /* PostViewModel.swift in Sources */,
 				66C349CA28E330200009E0D3 /* SceneDelegate.swift in Sources */,
 				66C349DC28EAC44D0009E0D3 /* Post.swift in Sources */,
 			);
