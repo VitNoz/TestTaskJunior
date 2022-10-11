@@ -9,9 +9,7 @@ import UIKit
 
 class PostController: UITableViewController {
     
-    static let shared = PostController()
-    
-    var posts = [Post]()
+    var postViewModels = [PostViewModel]()
     let cellId = "\(String(describing: CustomPostCell.self))"
     
     override func viewDidLoad() {
@@ -30,24 +28,24 @@ class PostController: UITableViewController {
                 return
             }
             
-            self.posts = posts?.posts ?? []
+            self.postViewModels = posts?.posts.map({return PostViewModel(post: $0)}) ?? []
             self.tableView.reloadData()
         }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return postViewModels.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! CustomPostCell
-        cell.post = posts[indexPath.row]
+        cell.postViewModel = postViewModels[indexPath.row]
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        PostDetailsViewController.shared.post = posts[indexPath.row]
+        PostDetailsViewController.shared.postViewModel = postViewModels[indexPath.row]
         navigationController?.pushViewController(PostDetailsViewController.shared, animated: true)
     }
     
@@ -59,11 +57,11 @@ class PostController: UITableViewController {
         title = "Posts"
 
         let sortByRatingMenuHandler: UIActionHandler = { [unowned self] _ in
-            posts = posts.sorted(by:{ $0.likes_count > $1.likes_count })
+            postViewModels = postViewModels.sorted(by:{ $0.likesCount > $1.likesCount })
             tableView.reloadData()
         }
         let sortByDateMenuHandler: UIActionHandler = { [unowned self] _ in
-            posts = posts.sorted(by:{ $0.timeshamp > $1.timeshamp })
+            postViewModels = postViewModels.sorted(by:{ $0.timeshamp > $1.timeshamp })
             tableView.reloadData()
         }
         

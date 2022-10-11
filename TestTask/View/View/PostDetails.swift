@@ -11,23 +11,13 @@ class PostDetailsViewController: UIViewController {
     
     static let shared = PostDetailsViewController()
     
-    var post: Post! {
+    var postViewModel: PostViewModel! {
         didSet {
-            guard let url = URL(string: post.postImage!) else {return}
-            if let data = try? Data(contentsOf: url) {
-                postImage.image = UIImage(data: data)
-            }
-            titleLabel.text = post.title
-            textView.text = post.text
-            likesLabel.text = String(post.likes_count)
-            dateLabel.text = {
-                let date = Date(timeIntervalSince1970: TimeInterval(post.timeshamp))
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateStyle = DateFormatter.Style.long
-                dateFormatter.locale = Locale(identifier: "en_US")
-                let dateText = dateFormatter.string(from: date)
-                return dateText
-            }()
+            postImage.image = postViewModel.image
+            titleLabel.text = postViewModel.title
+            textView.text = postViewModel.text
+            likesLabel.text = String(postViewModel.likesCount)
+            dateLabel.text = postViewModel.postDate
         }
     }
     
