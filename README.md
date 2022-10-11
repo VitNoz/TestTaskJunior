@@ -1,6 +1,8 @@
 # TestTaskJunior
 Table view application which downloads data in JSON format from the server, processes it and displays on the screen.
-Master branch: MVC /n
+
+Master branch: MVC
+
 Final branch: MVVM with Unit Tests
 ## View the list of posts
 /Users/vitaliknozhenko/Desktop/Снимок экрана 2022-10-11 в 20.02.04.png
